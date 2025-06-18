@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+    
+    <head>
+
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="home-page.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        
+        
+
+    </head>
+
+    <body>
+
+<!-- Sidebar -->
+         <button class="bars-button bars-button-js">
+          
+            <img src="images/3bar-sidebar.png" class="bars-img">
+            
+        </button>   
+<div class="side-bar side-bar-js"> 
+
+  <div class="sidebar-content">
+    <!-- Categories for mobile -->
+    <div class=" sidebar-categories">
+                <a href="../categories-page/category-product.html" target="_blank" class="categories">T-shirts</a>
+                <a href="../categories-page/sweatshirts.html" target="_blank" class="categories">Sweatshirts</a>
+                <a href="../categories-page/hoodies.html" target="_blank" class="categories">Hoodies</a>
+                <a href="../categories-page/caps.html" target="_blank"
+                class="categories">Caps</a>
+                <a href="../categories-page/shoes.html" target="_blank"
+                class="categories">Shoes</a>
+                <a href="../categories-page/promotions.html" target="_blank" class="categories">Promotions</a>
+    </div>
+    <!-- ...other sidebar content... -->
+  </div>
+</div>
+<div class="sidebar-overlay"></div>
+<!-- header -->
+
+
+<div class="header">
+
+
+            <div class="logo-container">
+                <img src="images/your-logo.jpg" alt="Logo" class="logo">
+                <p class="shop-name">Shop name</p>
+            </div>
+
+            <div class="categories-container">
+
+                <a href="../categories-page/category-product.html" target="_blank" class="categories">T-shirts</a>
+                <a href="../categories-page/sweatshirts.html" target="_blank" class="categories">Sweatshirts</a>
+                <a href="../categories-page/hoodies.html" target="_blank" class="categories">Hoodies</a>
+                <a href="../categories-page/caps.html" target="_blank"
+                class="categories">Caps</a>
+                <a href="../categories-page/shoes.html" target="_blank"
+                class="categories">Shoes</a>
+                <a href="../categories-page/promotions.html" target="_blank" class="categories">Promotions</a>
+                
+        
+            </div>
+
+    <div class="right">
+        <button class="icon-btn search-toggle" aria-label="Search" data-tooltip="Search">
+            <span class="material-icons">search</span>
+        </button>
+        <form class="search-form">
+          <input type="text" class="search-input" placeholder="Search products...">
+          <button type="button" class="search-close-btn" aria-label="Close search" data-tooltip="Close">&times;</button>
+        </form>
+        <a href="../wishlist/wishlist.html" style="text-decoration: none;">        
+        <button class="icon-btn" aria-label="Wishlist" data-tooltip="Wishlist">
+            <span class="material-icons">favorite_border</span>
+        </button>
+        </a>
+        <button class="icon-btn" aria-label="Cart" data-tooltip="Cart">
+            <span class="material-icons">shopping_cart</span>
+            <span class="cart-badge">2</span>
+        </button>
+        <button class="login-btn icon-btn" data-tooltip="Login">Login</button>
+    </div>
+
+</div>                
+
+
+        
+
+<!-- putting the descripting video -->
+
+        
+        <div class="video-container">
+
+            <video class = "video" width="320" height="240" autoplay loop muted playinline disablePictureInPicture>
+                <source src="images/home-page-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+        </div>
+
+<!-- what's new -->
+
+<div class="whats-new-section">
+    <h2 class="whats-new-title">What's New ?</h2>
+    <p class="whats-new-subtitle">
+        Check out our latest arrivals and exclusive deals!
+    </p>
+
+
+        <!-- product cards here -->
+
+
+
+    <div class="whats-new-list">
+        <div class="new-product-card">
+            <button class="wishlist-card-btn" data-product="tshirt-oversize" aria-label="Add to wishlist">
+                <span class="material-icons">favorite_border</span>
+            </button>
+            <img src="images/t-shirt-oversize.png" alt="New Product 1" class="new-product-img">
+            <p class="new-product-name">T-shirt Oversize</p>
+            <p class="new-product-price">1500 DA</p>
+            <button class="view-product-btn" data-product="tshirt-oversize">View</button>
+        </div>
+        <div class="new-product-card">
+            <button class="wishlist-card-btn" data-product="black-cap" aria-label="Add to wishlist">
+                <span class="material-icons">favorite_border</span>
+            </button>
+            <img src="images/black-cap.png" alt="New Product 2" class="new-product-img">
+            <p class="new-product-name">Black-cap</p>
+            <p class="new-product-price">2000 DA</p>
+            <button class="view-product-btn" data-product="black-cap">View</button>
+        </div>
+        <div class="new-product-card">
+            <button class="wishlist-card-btn" data-product="sweatshirt" aria-label="Add to wishlist">
+                <span class="material-icons">favorite_border</span>
+            </button>
+            <img src="images/black-sweatshirt.png" alt="New Product 2" class="new-product-img">
+            <p class="new-product-name">Black sweatshirt</p>
+            <p class="new-product-price">1500 DA</p>
+            <button class="view-product-btn" data-product="sweatshirt">View</button>
+        </div>
+        <div class="new-product-card">
+            <button class="wishlist-card-btn" data-product="black-hoodie" aria-label="Add to wishlist">
+                <span class="material-icons">favorite_border</span>
+            </button>
+            <img src="images/black-hoodie.png" alt="New Product 2" class="new-product-img">
+            <p class="new-product-name">Hoodie for Men</p>
+            <p class="new-product-price">2000 DA</p>
+            <button class="view-product-btn" data-product="black-hoodie">View</button>
+        </div>
+        <div class="new-product-card">
+            <button class="wishlist-card-btn" data-product="nike-dunk-black&white" aria-label="Add to wishlist">
+                <span class="material-icons">favorite_border</span>
+            </button>
+            <img src="images/nike-dunk-black&white-1.png" alt="New Product 1" class="new-product-img">
+            <p class="new-product-name">Nike dunk Black & White</p>
+            <p class="new-product-price">9500 DA</p>
+            <button class="view-product-btn-shoe" data-product="nike-dunk-black&white">View</button>
+        </div>
+        <div class="new-product-card">
+            <button class="wishlist-card-btn" data-product="nice-cap-for-kids" aria-label="Add to wishlist">
+                <span class="material-icons">favorite_border</span>
+            </button>
+            <img src="images/nice-cap-for-kids.png" alt="New Product 2" class="new-product-img">
+            <p class="new-product-name">Nice Cap for Kids</p>
+            <p class="new-product-price">1000 DA</p>
+            <button class="view-product-btn" data-product="nice-cap-for-kids">View</button>
+        </div>
+        <div class="new-product-card">
+            <button class="wishlist-card-btn" data-product="nike-dunk-pink-for-women" aria-label="Add to wishlist">
+                <span class="material-icons">favorite_border</span>
+            </button>
+            <img src="images/nike-dunk-pink-for-women-1.jpg" alt="New Product 2" class="new-product-img">
+            <p class="new-product-name">nike dunk pink</p>
+            <p class="new-product-price">8000 DA</p>
+            <button class="view-product-btn-shoe" data-product="nike-dunk-pink-for-women">View</button>
+        </div>
+        <div class="new-product-card">
+            <button class="wishlist-card-btn" data-product="call-of-duty-tshirt" aria-label="Add to wishlist">
+                <span class="material-icons">favorite_border</span>
+            </button>
+            <img src="images/call-of-duty-tshirt.jpg" alt="New Product 2" class="new-product-img">
+            <p class="new-product-name">Call of duty T-shirt</p>
+            <p class="new-product-price">2000 DA</p>
+            <button class="view-product-btn" data-product="call-of-duty-tshirt">View</button>
+        </div>
+        
+        <!-- Add more cards as needed -->
+
+    </div>
+</div>
+
+
+    <!-- What are we specialized in ?-->
+
+
+<section class="specialized-section">
+  <h2 class="section-title-specialized">What Are We Specialized In ?</h2>
+  <div class="specialized-video-wrapper">
+    <video class="specialized-video"  autoplay loop muted playinline disablePictureInPicture>
+      <source src="images/what-is-this-section-for.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <!-- Optionally, add a short description or features below the video -->
+</section>
+
+<!-- why shop name ? -->
+
+<section class="why-shop-section">
+  <h2 class="section-title">Why Choose Shop Name ?</h2>
+  <div class="why-shop-list">
+    <div class="why-shop-item">
+      <span class="material-icons why-icon">verified</span>
+      <p>Trusted by thousands</p>
+    </div>
+    <div class="why-shop-item">
+      <span class="material-icons why-icon">local_shipping</span>
+      <p>Fast delivery</p>
+    </div>
+    <div class="why-shop-item">
+      <span class="material-icons why-icon">payments</span>
+      <p>Payment on delivery</p>
+    </div>
+    <div class="why-shop-item">
+      <span class="material-icons why-icon">star</span>
+      <p>High quality products</p>
+    </div>
+    <div class="why-shop-item">
+      <span class="material-icons why-icon">attach_money</span>
+      <p>Affordable prices</p>
+    </div>
+    <div class="why-shop-item">
+      <span class="material-icons why-icon">favorite_border</span>
+      <p>Friendly support</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- store features -->
+
+<div class="separator"></div>
+
+
+
+<!-- invitation to social media -->
+
+
+
+    <div class="invitation-to-social-media">
+
+        <p class="invitation-to-social-media-text"> <span style="color: black;
+        font-size: 20px;
+        display: block;
+        margin-bottom: 5px;">
+            We invite you to follow us on our social media
+            </span>
+        To keep up with all updates and new events related to our store
+        </p>
+
+        <div class="social-media-icons">
+
+            <a href="https://www.facebook.com/yourpage" target="_blank">
+                <img src="images/facebook-icon.png" alt="Facebook" class="facebook-icon"></a>
+
+            <a href="https://www.instagram.com/yourpage" target="_blank">
+                <img src="images/instagram-icon.webp" alt="Instagram" class="instagram-icon">
+            </a>
+
+            <a href="https://www.tiktok.com/yourpage" target="_blank">
+                <img src="images/tiktok-icon.webp" alt="Tiktok" class="tiktok-icon">
+            </a>
+
+            <a href="https://www.snapchat.com/yourpage" target="_blank">
+                <img src="images/snapchat-icon.webp" alt="Snapchat" class="snapchat-icon">
+            </a>
+            
+            
+
+        </div>
+
+    </div>
+
+<!-- end of page -->
+
+
+<div class="separator"></div>
+      
+<div class="end-of-page">
+
+
+
+        <div class="shop-side">
+
+            <div class="shop-logo-and-name-in-bottom">
+                <a href="">
+                    <img src="images/your-logo.jpg" class="shop-logo-in-bottom">
+                </a>
+                    <h1 style="display: inline;">Shop Name</h1>
+                
+            </div>
+
+            <div class="shop-description-in-bottom">
+                <p class="shop-description-in-bottom-text">..........Shop Description..........</p>
+            </div>
+
+        </div>
+
+        <div class="about-us-side">
+
+            <div>
+                <p class="about-us-text">About us</p>
+                <a href="" class="rest-text" target="_blank">About our shop</a>
+                <a href="" class="rest-text" target="_blank">Privacy policy</a>
+                <a href="" class="rest-text" target="_blank">Refund policy</a>
+                <a href="" class="rest-text" target="_blank">Delivery policy</a>
+                <a href="" class="rest-text" target="_blank">Contact us</a>
+            </div>
+            
+
+
+
+        </div>
+
+        <div class="our-shop">
+            <p class="our-shop-text">Our shop</p>
+            <p class="location">location...</p>
+            <p class="opening-time">Samedi &#45 Jeudi 9:00 à 19:30 
+                <span style="display: block;
+                             margin-top: 5px;">Vendredi : Fermé
+                <span>
+            <p>
+        </div>
+
+        <div class="map-div">
+
+            <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.3944986793394!2d3.1767087758343497!3d36.713085672271994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5189eb619c9d%3A0x787a0b4fa45e227a!2sUniversit%C3%A9%20des%20Sciences%20et%20de%20la%20Technologie%20Houari%20Boumediene!5e0!3m2!1sfr!2sdz!4v1747575823103!5m2!1sfr!2sdz" 
+            width="270px" 
+            height="270px" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+
+            </iframe>
+
+        </div>
+
+        
+
+
+
+</div>
+
+<div class="separator separator-last"></div>
+
+<div class="footer">
+            <p class="footer-text">Copyright © 2025 Your Company. All rights reserved.</p>
+</div>
+
+        
+<div id="wishlist-toast" class="wishlist-toast"></div>
+
+
+
+<script src="home-page.js"></script>
+
+
+</body>
+
+</html>
