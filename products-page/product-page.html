@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product-page.css">
+    <title>Product Details</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../home-page/home-page.css">
+
+
+</head>
+
+<body>
+    
+    
+<div class="header">
+
+<!-- header -->
+
+
+            <div class="logo-container">
+                <a href="../home-page/home-page.html" class="logo-link">
+                <img src="../home-page/images/your-logo.jpg" alt="Logo" class="logo">
+                </a>
+                <p class="shop-name">Shop name</p>
+            </div>
+
+            <div class="categories-container">
+
+                <a href="../categories-page/category-product.html" target="_blank" 
+                class="categories">T-shirts</a>
+                <a href="../categories-page/sweatshirts.html" target="_blank" class="categories">Sweatshirts</a>
+                <a href="../categories-page/hoodies.html" target="_blank" class="categories">Hoodies</a>
+                <a href="../categories-page/caps.html" target="_blank"
+                class="categories">Caps</a>
+                <a href="../categories-page/shoes.html" target="_blank"
+                class="categories">Shoes</a>
+                <a href="../categories-page/promotions.html" target="_blank" class="categories">Promotions</a>
+        
+            </div>
+
+    <div class="right">
+        <button class="icon-btn search-toggle" aria-label="Search" style="display: none;">
+            <span class="material-icons">search</span>
+        </button>
+        <form class="search-form" style="display: none;">
+            <input type="text" class="search-input" placeholder="Search products...">
+        </form>
+        <a href="../home-page/home-page.html" class="icon-btn" aria-label="Home" data-tooltip="Home" style="text-decoration: none;">
+          <span class="material-icons">home</span>
+        </a>
+        <a href="../wishlist/wishlist.html" style="text-decoration: none;">        
+        <button class="icon-btn" aria-label="Wishlist" data-tooltip="Wishlist">
+            <span class="material-icons">favorite_border</span>
+        </button>
+        </a>
+        <button class="icon-btn" aria-label="Cart" data-tooltip="Cart">
+            <span class="material-icons">shopping_cart</span>
+            <span class="cart-badge">2</span>
+        </button>
+        <button class="login-btn icon-btn" data-tooltip="Login">Login</button>
+    </div>
+
+</div>  
+
+
+<!-- product detail section -->
+
+
+
+<div class="product-details-section">
+
+  <div class="product-images-area">
+
+    <div class="thumbnails">
+      <img class="thumbnail" src="" alt="Thumbnail 1">
+      <img class="thumbnail" src="" alt="Thumbnail 2">
+      <img class="thumbnail" src="" alt="Thumbnail 3">
+      <img class="thumbnail" src="" alt="Thumbnail 4">
+    </div>
+    
+    <img id="product-main-img" class="main-img" src="" alt="Main Product Image">
+  </div>
+  <button class="wishlist-btn" id="product-wishlist-btn" aria-label="Add to wishlist">
+    <span class="material-icons" id="wishlist-icon">favorite_border</span>
+  </button>
+  <div class="product-info-area">
+    <h2 id="product-name"></h2>
+    <p id="product-price"></p>
+    <p id="product-description"></p>
+    <div class="selectors">
+      <div class="color-selector">
+        <span>Color :</span>
+        <button class="color-swatch" style="background: #222;" title="Black"></button>
+        <button class="color-swatch color-swatch-white" style="background: #fff;" title="White"></button>
+      </div>
+
+    </div>
+
+    <div class="size-selector size-selector-js">
+            <span>Size :</span>
+            <button class="size-btn">S</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn">L</button>
+            <button class="size-btn">XL</button>
+    </div>
+
+    
+
+    <div class="cart-actions">
+      <span>Quantity :</span> 
+      <div class="quantity-selector">
+        <button type="button" class="qty-btn" id="decrease-qty">-</button>
+        <input id="quantity-selector" type="number" min="1" value="1" readonly>
+        <button type="button" class="qty-btn" id="increase-qty">+</button>
+      </div>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- Related product section -->
+
+
+
+<div class="related-products-section">
+    <h3 class="related-title">
+      <span class="material-icons" style="vertical-align: middle; color: #ff9800;">star</span>
+      Related Products
+    </h3>
+
+
+        <!-- product cards here -->
+
+
+    
+    <div class="related-product-list related-product-list-js">
+        <!-- 
+        <div class="related-product-card">
+            <img src="../home-page/images/t-shirt-oversize.png" alt="New Product 1" class="related-product-img">
+            <p class="related-product-name">T-shirt Oversize</p>
+            <p class="related-product-price">1500 DA</p>
+            <button class="related-view-product-btn" data-product="tshirt-oversize">View</button>
+        </div>
+        <div class="related-product-card">
+            <img src="../home-page/images/black-cap.png" alt="New Product 2" class="related-product-img">
+            <p class="related-product-name">Black-cap</p>
+            <p class="related-product-price">2000 DA</p>
+            <button class="related-view-product-btn" data-product="black-cap">View</button>
+        </div>
+        <div class="related-product-card">
+            <img src="../home-page/images/black-sweatshirt.png" alt="New Product 2" class="related-product-img">
+            <p class="related-product-name">Sweatshirt</p>
+            <p class="related-product-price">1500 DA</p>
+            <button class="related-view-product-btn" data-product="sweatshirt">View</button>
+        </div>
+        <div class="related-product-card">
+            <img src="../home-page/images/black-hoodie.png" alt="New Product 2" class="related-product-img">
+            <p class="related-product-name">Hoodie for Men</p>
+            <p class="related-product-price">2000 DA</p>
+            <button class="related-view-product-btn" data-product="black-hoodie">View</button>
+        </div>
+
+         -->
+        
+        <!-- Add more cards as needed -->
+
+    </div>
+</div>
+
+
+
+<!-- end of page -->
+
+
+<div class="separator"></div>
+      
+<div class="end-of-page">
+
+
+
+        <div class="shop-side">
+
+            <div class="shop-logo-and-name-in-bottom">
+                <a href="../home-page/home-page.html">
+                    <img src="../home-page/images/your-logo.jpg" class="shop-logo-in-bottom">
+                </a>
+                    <h1 style="display: inline;">Shop Name</h1>
+                
+            </div>
+
+            <div class="shop-description-in-bottom">
+                <p class="shop-description-in-bottom-text">..........Shop Description..........</p>
+            </div>
+
+        </div>
+
+        <div class="about-us-side">
+
+            <div>
+                <p class="about-us-text">About us</p>
+                <a href="" class="rest-text" target="_blank">About our shop</a>
+                <a href="" class="rest-text" target="_blank">Privacy policy</a>
+                <a href="" class="rest-text" target="_blank">Refund policy</a>
+                <a href="" class="rest-text" target="_blank">Delivery policy</a>
+                <a href="" class="rest-text" target="_blank">Contact us</a>
+            </div>
+            
+
+
+
+        </div>
+
+        <div class="our-shop">
+            <p class="our-shop-text">Our shop</p>
+            <p class="location">location...</p>
+            <p class="opening-time">Samedi &#45 Jeudi 9:00 à 19:30 
+                <span style="display: block;
+                             margin-top: 5px;">Vendredi : Fermé
+                <span>
+            <p>
+        </div>
+
+        <div class="map-div">
+
+            <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.3944986793394!2d3.1767087758343497!3d36.713085672271994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5189eb619c9d%3A0x787a0b4fa45e227a!2sUniversit%C3%A9%20des%20Sciences%20et%20de%20la%20Technologie%20Houari%20Boumediene!5e0!3m2!1sfr!2sdz!4v1747575823103!5m2!1sfr!2sdz" 
+            width="270px" 
+            height="270px" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+
+            </iframe>
+
+        </div>
+
+        
+
+
+
+</div>
+
+          <div class="separator separator-last"></div>
+
+    <div class="footer">
+                <p class="footer-text">Copyright © 2025 Your Company. All rights reserved.</p>
+    </div>
+
+
+
+
+<script src="product-page.js"></script>
+
+</body>
+
+</html>

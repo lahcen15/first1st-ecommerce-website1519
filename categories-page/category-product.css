@@ -1,0 +1,423 @@
+/* هذا مجرد تمويه لحل مشكل */
+
+.product-details-section{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  products container */
+
+.category-section {
+  max-width: 1300px;
+  margin: 48px auto;
+  padding: 0 32px;
+}
+
+.category-title {
+  font-size: 2.2rem;
+  color: #2196f3;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.category-title {
+  font-size: 2.2rem;
+  color: #222;
+  font-weight: 800;
+  margin-bottom: 12px;
+  display: inline-block;
+  border-bottom: 4px solid #2196f3;
+  padding-bottom: 4px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.category-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #2196f3 60%, #ff9800 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.category-title {
+  font-size: 2.3rem;
+  color: #222;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  position: relative;
+  padding-left: 0;
+}
+.category-title::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #2196f3;
+  border-radius: 50%;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+
+
+.category-description {
+  color: #555;
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+  margin-top: 2px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.category-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 24px;
+}
+
+                              /* Filter bar */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #f7faff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(33,150,243,0.06);
+  padding: 16px 24px;
+  margin-bottom: 28px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.filter-bar label {
+  font-weight: 600;
+  color: #2196f3;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-select {
+  margin-left: 0;
+  padding: 8px 24px 8px 12px;
+  border-radius: 8px;
+  border: 2px solid #2196f3;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #f7faff;
+  color: #222;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(33,150,243,0.08);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='gray' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%232196f3' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px 18px;
+  cursor: pointer;
+}
+
+#filter-sex, #filter-print {
+  padding-right: 30px;
+}
+
+#filter-color,#filter-sort {
+  padding-right: 30px;
+  margin-right: 0px;
+}
+
+#filter-age{
+  padding-right: 30px;
+}
+
+
+/* هذس لي تبدل لونها للبرتالي , شفت انه لا فائدة لها , والديفولت يخليها سوداء
+وبانت شابة اكثر
+.filter-select:focus 
+  border: 2px solid #ff9800;
+  outline: none;
+  box-shadow: 0 0 0 2px #e3f2fd;
+}
+
+.filter-select:hover {
+  border: 2px solid #ff9800;
+  box-shadow: 0 1px 4px rgba(33,150,243,0.12);
+  cursor: pointer;
+} /* 
+
+
+                              /* Products grid */
+
+
+.products-grid-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: flex-start;
+  margin-left: 25px;
+}
+
+.product-card-categories {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 16px;
+  width: 230px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+.product-card-categories:hover {
+  box-shadow: 0 4px 16px #2196f355;
+  border-color: #1769aa;
+}
+.product-img-categories {
+  width: 165px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.product-name-categories {
+  color: #222;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 0 4px 0;
+}
+.product-price-categories {
+  color: #4caf50;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 6px;
+  font-size: 25px;
+}
+.view-product-btn-categories {
+  padding: 8px 24px;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+  font-size: 15px;
+}
+.view-product-btn-categories:hover {
+  background: #1769aa;
+}
+
+.product-card-categories {
+  position: relative;
+  /* ...existing styles... */
+}
+
+/* this code is for styling the wishlist button on the cards */
+
+.wishlist-card-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #0002;
+  color: #e67e22;
+  font-size: 1.7rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  cursor: pointer;
+  transition: color 0.18s, background 0.18s;
+}
+.wishlist-card-btn.active,
+.wishlist-card-btn:hover {
+  color: #ff1744;
+  background: #ffe5e5;
+}
+
+
+/* style of the message that shows  when adding a product to the wishlist */
+
+.wishlist-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2196f3;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+.wishlist-toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* this one is only for shoes product page */
+
+.view-product-btn-categories-shoes {
+  padding: 8px 24px;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+  font-size: 15px;
+}
+.view-product-btn-categories-shoes:hover {
+  background: #1769aa;
+}
+
+
+
+/* style for phones */
+
+
+@media (max-width: 767px) {
+  .filter-bar {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding: 12px 8px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filter-bar label {
+  font-size: 1rem;
+  gap: 6px;
+}
+
+.filter-select {
+  width: 67%;
+  min-width: 0;
+  font-size: 1rem;
+  margin: 0;
+}
+
+#filter-color{
+  margin-left: 37px;
+}
+
+#filter-sex{
+  margin-left: 52px;
+}
+
+#filter-print{
+  margin-left: -3px;
+}
+
+#filter-sort{
+  margin-left: 23px;
+}
+
+  .category-products-section {
+    padding: 0 4vw;
+    margin-top: 18px;
+  }
+
+  .category-title {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .products-grid,
+  .category-products-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .product-card,
+  .category-product-card {
+    width: 94vw;
+    max-width: 340px;
+    height: auto;
+    padding: 12px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #2196f322;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card img,
+  .category-product-card img {
+    width: 90vw;
+    max-width: 180px;
+    height: 110px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #f7faff;
+  }
+
+  .product-card h2,
+  .category-product-card h2 {
+    font-size: 1.1rem;
+    margin: 8px 0 4px 0;
+    color: #1769aa;
+    text-align: center;
+  }
+
+  .product-card p,
+  .category-product-card p {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    margin-top: 2px;
+    text-align: center;
+  }
+
+  .view-btn,
+  .category-view-btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 6px;
+  }
+}

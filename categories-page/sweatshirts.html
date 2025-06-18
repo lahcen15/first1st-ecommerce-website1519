@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="category-product.css">
+    <link rel="stylesheet" href="../home-page/home-page.css">
+    <title>Sweatshirts</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <!-- header -->
+
+
+<div class="header">
+
+
+            <div class="logo-container">
+                <img src="../home-page/images/your-logo.jpg" alt="Logo" class="logo">
+                <p class="shop-name">Shop name</p>
+            </div>
+
+            <div class="categories-container">
+                <a href="../categories-page/category-product.html" target="_blank" 
+                class="categories">T-shirts</a>
+                <a href="../categories-page/sweatshirts.html" target="_blank" class="categories">Sweatshirts</a>
+                <a href="../categories-page/hoodies.html" target="_blank" class="categories">Hoodies</a>
+                <a href="../categories-page/caps.html" target="_blank"
+                class="categories">Caps</a>
+                <a href="../categories-page/shoes.html" target="_blank"
+                class="categories">Shoes</a>
+                <a href="../categories-page/promotions.html" target="_blank" class="categories">Promotions</a>
+            </div>
+
+    <div class="right">
+        <button class="icon-btn search-toggle" aria-label="Search" style="display: none;">
+            <span class="material-icons">search</span>
+        </button>
+        <form class="search-form" style="display: none;">
+            <input type="text" class="search-input" placeholder="Search products...">
+        </form>
+        <a href="../home-page/home-page.html" class="icon-btn" aria-label="Home" data-tooltip="Home" style="text-decoration: none;">
+          <span class="material-icons">home</span>
+        </a>
+        <a href="../wishlist/wishlist.html" style="text-decoration: none;">        
+        <button class="icon-btn" aria-label="Wishlist" data-tooltip="Wishlist">
+            <span class="material-icons">favorite_border</span>
+        </button>
+        </a>
+        <button class="icon-btn" aria-label="Cart" data-tooltip="Cart">
+            <span class="material-icons">shopping_cart</span>
+            <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+        <button class="login-btn icon-btn" data-tooltip="Login">Login</button>
+    </div>
+
+</div> 
+
+<script>
+
+
+// Add click event to toggle the search form
+
+document.querySelector('.search-toggle').addEventListener('click', function() {
+    document.querySelector('.search-form').classList.toggle('active');
+    document.querySelector('.search-input').focus();
+});
+  
+</script>
+
+
+
+<!-- filters bar and title -->
+
+
+<div class="category-section">
+  <h1 class="category-title">Sweatshirts</h1>
+  <p class="category-description">Discover our latest collection of comfortable and stylish t-shirts.</p>
+  
+  <!-- (Optional) Filters go here -->
+
+  <div class="filter-bar">
+  <label>
+    Age group :
+    <select class="filter-select" id="filter-age">
+      <option value="">All</option>
+      <option value="Children">Children</option>
+      <option value="Adults">Adults</option>
+    </select>
+  </label>
+  <label>
+    Color :
+    <select class="filter-select" id="filter-color">
+      <option value="">All</option>
+      <option value="White">White</option>
+      <option value="Black">Black</option>
+      <option value="Multiple colors">Multiple colors</option>
+      <option value="Black & White">Black & White</option>
+    </select>
+  </label>
+  <label>
+    Sex :
+    <select class="filter-select" id="filter-sex">
+      <option value="">All</option>
+      <option value="Unisex">Unisex</option>
+      <option value="Men">Men</option>
+      <option value="Women">women</option>
+    </select>
+  </label>
+  <label>
+    Print style :
+    <select class="filter-select" id="filter-print">
+      <option value="">All</option>
+      <option value="Plain">Plain</option>
+      <option value="Printed">Printed</option>
+    </select>
+  </label>
+  <label>
+    Sort by :
+    <select class="filter-select" id="filter-sort">
+      <option value="default">Default</option>
+      <option value="price-low">Price: Low to High</option>
+      <option value="price-high">Price: High to Low</option>
+    </select>
+  </label>
+</div>
+
+  <div class="products-grid-categories">
+
+    <!-- Product cards go here -->
+
+    <div class="product-card-categories"
+    data-age="Adults"
+    data-color="Black & White"
+    data-sex="Men"
+    data-print="Plain"
+    data-price="1500"
+    >
+    <button class="wishlist-card-btn" data-product="sweatshirt" aria-label="Add to wishlist">
+        <span class="material-icons">favorite_border</span>
+    </button>
+      <img src="../home-page/images/black-sweatshirt.png" alt="T-shirt Oversize" class="product-img-categories">
+      <h2 class="product-name-categories">Sweatshirt for Men</h2>
+      <p class="product-price-categories">1500 DA</p>
+      <button class="view-product-btn-categories" data-product="sweatshirt">View</button>
+    </div>
+
+    <div class="product-card-categories"
+    data-age="Adults"
+    data-color="Multiple colors"
+    data-sex="Unisex"
+    data-print="Plain"
+    data-price="1800"
+    >
+    <button class="wishlist-card-btn" data-product="unisex-sweatshirt" aria-label="Add to wishlist">
+        <span class="material-icons">favorite_border</span>
+    </button>
+      <img src="../home-page/images/white-sweatshirt-unisex.jpg" alt="T-shirt Oversize" class="product-img-categories">
+      <h2 class="product-name-categories">Unisex Sweatshirt</h2>
+      <p class="product-price-categories">1800 DA</p>
+      <button class="view-product-btn-categories" data-product="unisex-sweatshirt">View</button>
+    </div>
+
+    <div class="product-card-categories"
+    data-age="Children"
+    data-color="Black & White"
+    data-sex="Unisex"
+    data-print="Plain"
+    data-price="1000"
+    >
+    <button class="wishlist-card-btn" data-product="sweatshirt-for-kids" aria-label="Add to wishlist">
+        <span class="material-icons">favorite_border</span>
+      </button>
+      <img src="../home-page/images/sweatshirt-for-kids.jpg" alt="T-shirt Oversize" class="product-img-categories">
+      <h2 class="product-name-categories">Sweatshirt for Kids</h2>
+      <p class="product-price-categories">1200 DA</p>
+      <button class="view-product-btn-categories" data-product="sweatshirt-for-kids">View</button>
+    </div>
+
+
+    <!-- Repeat for other t-shirts -->
+  </div>
+</div>
+
+
+
+    
+
+<!-- end of page -->
+
+
+<div class="separator"></div>
+      
+<div class="end-of-page">
+
+
+
+        <div class="shop-side">
+
+            <div class="shop-logo-and-name-in-bottom">
+                <a href="../home-page/home-page.html">
+                    <img src="../home-page/images/your-logo.jpg" class="shop-logo-in-bottom">
+                </a>
+                    <h1 style="display: inline;">Shop Name</h1>
+                
+            </div>
+
+            <div class="shop-description-in-bottom">
+                <p class="shop-description-in-bottom-text">..........Shop Description..........</p>
+            </div>
+
+        </div>
+
+        <div class="about-us-side">
+
+            <div>
+                <p class="about-us-text">About us</p>
+                <a href="" class="rest-text" target="_blank">About our shop</a>
+                <a href="" class="rest-text" target="_blank">Privacy policy</a>
+                <a href="" class="rest-text" target="_blank">Refund policy</a>
+                <a href="" class="rest-text" target="_blank">Delivery policy</a>
+                <a href="" class="rest-text" target="_blank">Contact us</a>
+            </div>
+            
+
+
+
+        </div>
+
+        <div class="our-shop">
+            <p class="our-shop-text">Our shop</p>
+            <p class="location">location...</p>
+            <p class="opening-time">Samedi &#45 Jeudi 9:00 à 19:30 
+                <span style="display: block;
+                             margin-top: 5px;">Vendredi : Fermé
+                <span>
+            <p>
+        </div>
+
+        <div class="map-div">
+
+            <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.3944986793394!2d3.1767087758343497!3d36.713085672271994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5189eb619c9d%3A0x787a0b4fa45e227a!2sUniversit%C3%A9%20des%20Sciences%20et%20de%20la%20Technologie%20Houari%20Boumediene!5e0!3m2!1sfr!2sdz!4v1747575823103!5m2!1sfr!2sdz" 
+            width="270px" 
+            height="270px" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+
+            </iframe>
+
+        </div>
+
+        
+
+
+
+</div>
+
+<div class="separator separator-last"></div>
+
+<div class="footer">
+            <p class="footer-text">Copyright © 2025 Your Company. All rights reserved.</p>
+</div>
+
+
+
+<!-- هذا مجرد تمويه لحل احد المشاكل -->
+
+
+
+<div class="product-details-section">
+
+  <div class="product-images-area">
+
+    <div class="thumbnails">
+      <img class="thumbnail" src="" alt="Thumbnail 1">
+      <img class="thumbnail" src="" alt="Thumbnail 2">
+      <img class="thumbnail" src="" alt="Thumbnail 3">
+      <img class="thumbnail" src="" alt="Thumbnail 4">
+    </div>
+    <img id="product-main-img" class="main-img" src="" alt="Main Product Image">
+  </div>
+
+  <div class="product-info-area">
+    <h2 id="product-name"></h2>
+    <p id="product-price"></p>
+    <p id="product-description"></p>
+    <div class="selectors">
+      <div class="color-selector">
+        <span>Color :</span>
+        <button class="color-swatch" style="background: #222;" title="Black"></button>
+        <button class="color-swatch color-swatch-white" style="background: #fff;" title="White"></button>
+      </div>
+
+    </div>
+
+    <div class="size-selector">
+            <span>Size :</span>
+            <button class="size-btn">S</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn">L</button>
+            <button class="size-btn">XL</button>
+    </div>
+
+    
+
+    <div class="cart-actions">
+      <span>Quantity :</span> 
+      <div class="quantity-selector">
+        <button type="button" class="qty-btn" id="decrease-qty">-</button>
+        <input id="quantity-selector" type="number" min="1" value="1" readonly>
+        <button type="button" class="qty-btn" id="increase-qty">+</button>
+      </div>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- هذا مجرد تمويه لحل احد المشاكل -->
+
+
+<div id="wishlist-toast" class="wishlist-toast"></div>
+
+
+
+<script src="category-product.js"></script>
+<script src="../products-page/product-page.js"></script>
+
+
+
+
+</body>
+    
+</html>

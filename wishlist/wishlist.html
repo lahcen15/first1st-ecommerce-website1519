@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wishlist</title>
+  <link rel="stylesheet" href="wishlist.css">
+    <link rel="stylesheet" href="../home-page/home-page.css">
+
+</head>
+
+<body>
+
+
+<div class="header">
+
+<!-- header -->
+
+
+            <div class="logo-container">
+                <a href="../home-page/home-page.html" class="logo-link">
+                <img src="../home-page/images/your-logo.jpg" alt="Logo" class="logo">
+                </a>
+                <p class="shop-name">Shop name</p>
+            </div>
+
+            <div class="categories-container">
+
+                <a href="../categories-page/category-product.html" target="_blank" 
+                class="categories">T-shirts</a>
+                <a href="../categories-page/sweatshirts.html" target="_blank" class="categories">Sweatshirts</a>
+                <a href="../categories-page/hoodies.html" target="_blank" class="categories">Hoodies</a>
+                <a href="../categories-page/caps.html" target="_blank"
+                class="categories">Caps</a>
+                <a href="../categories-page/shoes.html" target="_blank"
+                class="categories">Shoes</a>
+                <a href="../categories-page/promotions.html" target="_blank" class="categories">Promotions</a>
+        
+            </div>
+
+    <div class="right">
+        <button class="icon-btn search-toggle" aria-label="Search" style="display: none;">
+            <span class="material-icons">search</span>
+        </button>
+        <form class="search-form" style="display: none;">
+            <input type="text" class="search-input" placeholder="Search products...">
+        </form>
+        <a href="../home-page/home-page.html" class="icon-btn" aria-label="Home" data-tooltip="Home" style="text-decoration: none;">
+          <span class="material-icons">home</span>
+        </a>
+        <a href="../wishlist/wishlist.html" style="text-decoration: none;">        
+        <button class="icon-btn" aria-label="Wishlist" data-tooltip="Wishlist">
+            <span class="material-icons">favorite_border</span>
+        </button>
+        </a>
+        <button class="icon-btn" aria-label="Cart" data-tooltip="Cart">
+            <span class="material-icons">shopping_cart</span>
+            <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+
+        <button class="login-btn icon-btn" data-tooltip="Login">Login</button>
+    </div>
+
+</div>  
+
+  <h1 class="wishlist-title">Your Wishlist</h1>
+  <div id="wishlist-products"></div>
+
+
+  <div id="cart-toast" class="cart-toast">  </div>
+
+
+  <script src="../home-page/products-data.js"></script>
+  <script src="wishlist.js"></script>
+</body>
+
+</html>
