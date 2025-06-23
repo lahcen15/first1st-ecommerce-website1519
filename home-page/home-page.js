@@ -1,3 +1,14 @@
+// this code is for removing focus style after clicking the categories buttons
+
+document.querySelectorAll('.categories').forEach(link => {
+  link.addEventListener('click', function() {
+    this.blur(); // removes focus style after click
+  });
+});
+
+
+
+
 // click on the button to show/hide the sidebar
 const sidebar = document.querySelector('.side-bar-js');
 const toggleButton = document.querySelector('.bars-button-js');
@@ -81,28 +92,17 @@ if (searchForm && searchInput) {
 
 // this code is for wishlist
 
-// Get wishlist from localStorage or start with empty array
-let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-// Toggle wishlist on button click
-document.querySelectorAll('.wishlist-card-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const productId = this.getAttribute('data-product');
-
-  });
-
-  // Set active state if already in wishlist
-  const productId = btn.getAttribute('data-product');
-  if (wishlist.includes(productId)) {
-    btn.classList.add('active');
-  }
-});
 
 
-// showing a message when clicking the wishlist button
 
 function showWishlistToast(message) {
-  const toast = document.getElementById('wishlist-toast');
+  let toast = document.getElementById('wishlist-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'wishlist-toast';
+    toast.className = 'wishlist-toast';
+    document.body.appendChild(toast);
+  }
   toast.textContent = message;
   toast.classList.add('show');
   setTimeout(() => {
@@ -110,27 +110,72 @@ function showWishlistToast(message) {
   }, 1800);
 }
 
-document.querySelectorAll('.wishlist-card-btn').forEach(btn => {
+function updateWishlistButtons() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  document.querySelectorAll('.wishlist-btn, .wishlist-card-btn').forEach(btn => {
+    const productId = btn.getAttribute('data-product');
+    const icon = btn.querySelector('.material-icons');
+    if (wishlist.includes(productId)) {
+      btn.classList.add('active');
+      if (icon) icon.textContent = 'favorite';
+    } else {
+      btn.classList.remove('active');
+      if (icon) icon.textContent = 'favorite_border';
+    }
+  });
+}
+
+// Attach click event to all wishlist buttons
+document.querySelectorAll('.wishlist-btn, .wishlist-card-btn').forEach(btn => {
   btn.addEventListener('click', function() {
     const productId = this.getAttribute('data-product');
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     if (wishlist.includes(productId)) {
       wishlist = wishlist.filter(id => id !== productId);
-      this.classList.remove('active');
       showWishlistToast('Product removed from wish list');
     } else {
       wishlist.push(productId);
-      this.classList.add('active');
       showWishlistToast('Product added to wish list');
     }
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    updateWishlistButtons();
   });
+});
 
-  // Set active state if already in wishlist
-  const productId = btn.getAttribute('data-product');
-  if (wishlist.includes(productId)) {
-    btn.classList.add('active');
+// Call on page load
+updateWishlistButtons();
+
+// Sync with other tabs/pages
+window.addEventListener('storage', function(event) {
+  if (event.key === 'wishlist') {
+    updateWishlistButtons();
   }
 });
+
+
+
+
+// code for cart
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+  const badge = document.getElementById('cart-badge');
+  if (badge) badge.textContent = totalQty;
+}
+
+// Call once on page load
+updateCartBadge();
+
+// Sync badge if cart changes in another tab
+window.addEventListener('storage', function(event) {
+  if (event.key === 'cart') {
+    updateCartBadge();
+  }
+});
+
+
+
 
 
 

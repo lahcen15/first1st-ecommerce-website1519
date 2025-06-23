@@ -1,3 +1,6 @@
+
+
+
 /* this is for showing a tooltip when hovering over icons */
 
 .icon-btn[data-tooltip] {
@@ -32,89 +35,20 @@
 
 
 
-  @media (max-width: 767px) {
-  body {
-    padding: 0 4vw;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    margin-top: 22px;
-    margin-bottom: 18px;
-    left: 0;
-    transform: none;
-    display: block;
-    text-align: center;
-  }
-  h1::after {
-    width: 40px;
-    height: 3px;
-    margin: 8px auto 0 auto;
-  }
-
-  .products-grid,
-  #search-results {
-    flex-direction: column;
-    gap: 18px;
-    margin-left: 0;
-    align-items: center;
-    justify-content: flex-start;
-    margin-left: -48px;
-  }
-  
-
-  .product-card {
-    width: 95vw;
-    max-width: 340px;
-    height: auto;
-    padding: 12px;
-  }
-  .product-card img {
-    width: 90vw;
-    max-width: 220px;
-    height: 140px;
-  }
-  .product-card h2 {
-    font-size: 1.1rem;
-  }
-  .product-card p {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    margin-top: 4px;
-  }
-  .view-btn {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 1rem;
-  }
-
-  .no-results {
-    font-size: 1rem;
-    margin-top: 24px;
-  }
-
-  /* Header and nav adjustments if needed */
-  .header, .right, .categories-container {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-  .icon-btn {
-    margin: 0 2px;
-  }
-
-
-
-  }
-
 
 
 #search-results {
-  margin-top: 32px;
+  margin-top: 15px;
   display: flex;
+  flex-direction: row;   
   flex-wrap: wrap;
+  align-items: center;      /* Center horizontally */
+  justify-content: flex-start;  
+  text-align: center;
+  min-height: 300px;        /* Ensures enough space for vertical centering */
   gap: 32px;
-  justify-content: flex-start;
+  margin-left: 55px;
+  margin-bottom: 55px;
 } 
 
 h1 {
@@ -208,14 +142,114 @@ h1::after {
 }
 .no-results {
   width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: #888;
-  margin-top: 40px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  margin-top: -210px;
+  margin-left: -25px;
 }
 .no-results span {
-  font-size: 2.5rem;
+  font-size: 3rem;
   display: block;
-  margin-bottom: 10px;
 }
 
+.no-results-text{
+  margin-bottom: -4px;
+  margin-top: 8px;
+}
+
+
+
+
+  @media (max-width: 767px) {
+  body {
+    padding: 0 4vw;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 35px;
+    margin-bottom: 18px;
+    left: 0;
+    transform: none;
+    display: block;
+    text-align: center;
+  }
+  h1::after {
+    width: 40px;
+    height: 3px;
+    margin: 8px auto 0 auto;
+  }
+
+  .products-grid,
+  #search-results {
+    gap: 18px;
+    margin-left: 0;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: -40px;
+  }
+  
+
+  .product-card {
+    width: 95vw;
+    max-width: 340px;
+    height: auto;
+    padding: 12px;
+  }
+  .product-card img {
+    width: 90vw;
+    max-width: 220px;
+    height: 140px;
+  }
+  .product-card h2 {
+    font-size: 1.1rem;
+  }
+  .product-card p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    margin-top: 4px;
+  }
+  .view-btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+
+  .no-results {
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: -220px;
+  }
+
+  .no-results span {
+  font-size: 2.5rem;
+  display: block;
+  }
+
+  .no-results-text{
+  margin-bottom: 0px;
+  margin-top: 10px;
+  }
+
+  /* Header and nav adjustments if needed */
+  .header, .right, .categories-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .icon-btn {
+    margin: 0 2px;
+  }
+
+
+
+  }

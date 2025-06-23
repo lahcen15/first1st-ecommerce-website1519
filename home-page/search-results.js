@@ -1,4 +1,10 @@
+// this code is for removing focus style after clicking the categories buttons
 
+document.querySelectorAll('.categories').forEach(link => {
+  link.addEventListener('click', function() {
+    this.blur(); // removes focus style after click
+  });
+});
 
 
 
@@ -33,8 +39,8 @@ if (!found) {
   resultsContainer.innerHTML = `
     <div class="no-results">
       <span>😕</span>
-      <p>No products found for "<b>${query}</b>".</p>
-      <p>Try searching with different keywords or tags.</p>
+      <p class="no-results-text">No products found for "<b>${query}</b>".</p>
+      <p class="no-results-text">Try searching with different keywords or tags.</p>
     </div>
   `;
 }
@@ -58,14 +64,7 @@ resultsContainer.addEventListener('click', function(e) {
 
 
 
-// click on the button to show/hide the sidebar
-const sidebar = document.querySelector('.side-bar-js');
-const toggleButton = document.querySelector('.bars-button-js');
 
-// Add click event to toggle the sidebar
-toggleButton.addEventListener('click', () => {
-    sidebar.classList.toggle('active'); // Show/hide sidebar
-});
 
 
 // Add click event to toggle the search form
@@ -73,4 +72,26 @@ toggleButton.addEventListener('click', () => {
 document.querySelector('.search-toggle').addEventListener('click', function() {
     document.querySelector('.search-form').classList.toggle('active');
     document.querySelector('.search-input').focus();
+});
+
+
+
+
+// code for cart
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+  const badge = document.getElementById('cart-badge');
+  if (badge) badge.textContent = totalQty;
+}
+
+// Call once on page load
+updateCartBadge();
+
+// Sync badge if cart changes in another tab
+window.addEventListener('storage', function(event) {
+  if (event.key === 'cart') {
+    updateCartBadge();
+  }
 });

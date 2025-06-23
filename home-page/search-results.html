@@ -52,10 +52,12 @@
             <span class="material-icons">favorite_border</span>
         </button>
         </a>
+        <a href="../cart/cart.html" style="text-decoration: none;">
         <button class="icon-btn" aria-label="Cart" data-tooltip="Cart">
             <span class="material-icons">shopping_cart</span>
-            <span class="cart-badge">2</span>
+            <span class="cart-badge" id="cart-badge">0</span>
         </button>
+        </a>
         <button class="login-btn icon-btn" data-tooltip="Login">Login</button>
     </div>
 
@@ -67,98 +69,19 @@
 <!-- this part is for showing the products cards that matches your search -->
 
   <h1>Search Results</h1>
-  <div class="products-grid">
-    <div id="search-results"></div>
-  </div>
+  <div class="products-grid"></div> <!-- it might have no uses , search about it in the js file and you'll undestand -->
+  <div id="search-results"></div>
+  
 
 
 
-<!-- end of page -->
-
-
-<div class="separator"></div>
-      
-<div class="end-of-page">
 
 
 
-        <div class="shop-side">
+ <!-- This provides productsInformations , the second is for code of searching-->
+  <script src="products-data.js"></script>
 
-            <div class="shop-logo-and-name-in-bottom">
-                <a href="../home-page/home-page.html">
-                    <img src="../home-page/images/your-logo.jpg" class="shop-logo-in-bottom">
-                </a>
-                    <p style="display: inline;
-                              font-size: xx-large;
-                              font-weight: bolder;
-                              margin-bottom: 33px;">Shop Name</p>
-                
-            </div>
-
-            <div class="shop-description-in-bottom">
-                <p class="shop-description-in-bottom-text">..........Shop Description..........</p>
-            </div>
-
-        </div>
-
-        <div class="about-us-side">
-
-            <div>
-                <p class="about-us-text">About us</p>
-                <a href="" class="rest-text" target="_blank">About our shop</a>
-                <a href="" class="rest-text" target="_blank">Privacy policy</a>
-                <a href="" class="rest-text" target="_blank">Refund policy</a>
-                <a href="" class="rest-text" target="_blank">Delivery policy</a>
-                <a href="" class="rest-text" target="_blank">Contact us</a>
-            </div>
-            
-
-
-
-        </div>
-
-        <div class="our-shop">
-            <p class="our-shop-text">Our shop</p>
-            <p class="location">location...</p>
-            <p class="opening-time">Samedi &#45 Jeudi 9:00 à 19:30 
-                <span style="display: block;
-                             margin-top: 5px;">Vendredi : Fermé
-                <span>
-            <p>
-        </div>
-
-        <div class="map-div">
-
-            <iframe class="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.3944986793394!2d3.1767087758343497!3d36.713085672271994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5189eb619c9d%3A0x787a0b4fa45e227a!2sUniversit%C3%A9%20des%20Sciences%20et%20de%20la%20Technologie%20Houari%20Boumediene!5e0!3m2!1sfr!2sdz!4v1747575823103!5m2!1sfr!2sdz" 
-            width="270px" 
-            height="270px" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-
-            </iframe>
-
-        </div>
-
-        
-
-
-
-</div>
-
-<div class="separator separator-last"></div>
-
-<div class="footer">
-            <p class="footer-text">Copyright © 2025 Your Company. All rights reserved.</p>
-</div>
-
-
-
-<script src="products-data.js"></script>
- <!-- This provides productsInformations -->
 <script src="search-results.js"></script>
-<script src="../categories-page/shoes.js"></script>
 
 </body>
 </html>
