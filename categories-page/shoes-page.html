@@ -58,10 +58,12 @@
             <span class="material-icons">favorite_border</span>
         </button>
         </a>
+        <a href="../cart/cart.html" style="text-decoration: none;">
         <button class="icon-btn" aria-label="Cart" data-tooltip="Cart">
             <span class="material-icons">shopping_cart</span>
-            <span class="cart-badge">2</span>
+            <span class="cart-badge" id="cart-badge">0</span>
         </button>
+        </a>
         <button class="login-btn icon-btn" data-tooltip="Login">Login</button>
     </div>
 
@@ -115,7 +117,8 @@
         <input id="quantity-selector" type="number" min="1" value="1" readonly>
         <button type="button" class="qty-btn" id="increase-qty">+</button>
       </div>
-      <button class="add-to-cart-btn">Add to Cart</button>
+          <div class="add-to-cart"></div>
+
     </div>
 
   </div>
@@ -231,6 +234,10 @@
                 <p class="footer-text">Copyright © 2025 Your Company. All rights reserved.</p>
     </div>
 
+
+
+<div id="wishlist-toast" class="wishlist-toast"></div>
+<div id="cart-toast" class="cart-toast"></div>
 
 
 

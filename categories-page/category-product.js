@@ -1,3 +1,11 @@
+// this code is for removing focus style after clicking the categories buttons
+
+document.querySelectorAll('.categories').forEach(link => {
+  link.addEventListener('click', function() {
+    this.blur(); // removes focus style after click
+  });
+});
+
 
 // Add click event to toggle the search form
 
@@ -119,22 +127,61 @@ function showWishlistToast(message) {
 
 document.querySelectorAll('.wishlist-card-btn').forEach(btn => {
   btn.addEventListener('click', function() {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     const productId = this.getAttribute('data-product');
     if (wishlist.includes(productId)) {
       wishlist = wishlist.filter(id => id !== productId);
-      this.classList.remove('active');
       showWishlistToast('Product removed from wish list');
     } else {
       wishlist.push(productId);
-      this.classList.add('active');
       showWishlistToast('Product added to wish list');
     }
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    updateWishlistButtons();
   });
+});
 
-  // Set active state if already in wishlist
-  const productId = btn.getAttribute('data-product');
-  if (wishlist.includes(productId)) {
-    btn.classList.add('active');
+
+// code for cart
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+  const badge = document.getElementById('cart-badge');
+  if (badge) badge.textContent = totalQty;
+}
+
+// Call once on page load
+updateCartBadge();
+
+// Sync badge if cart changes in another tab
+window.addEventListener('storage', function(event) {
+  if (event.key === 'cart') {
+    updateCartBadge();
   }
 });
+
+
+function updateWishlistButtons() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  document.querySelectorAll('.wishlist-btn, .wishlist-card-btn').forEach(btn => {
+    const productId = btn.getAttribute('data-product');
+    const icon = btn.querySelector('.material-icons');
+    if (wishlist.includes(productId)) {
+      btn.classList.add('active');
+      if (icon) icon.textContent = 'favorite';
+    } else {
+      btn.classList.remove('active');
+      if (icon) icon.textContent = 'favorite_border';
+      
+    }
+  });
+}
+
+window.addEventListener('storage', function(event) {
+  if (event.key === 'wishlist') {
+    updateWishlistButtons();
+  }
+});
+
+updateWishlistButtons();
