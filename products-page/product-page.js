@@ -1,3 +1,13 @@
+// this code is for removing focus style after clicking the categories buttons
+
+document.querySelectorAll('.categories').forEach(link => {
+  link.addEventListener('click', function() {
+    this.blur(); // removes focus style after click
+  });
+});
+
+
+
 // Add click event to toggle the search form
 
 document.querySelector('.search-toggle').addEventListener('click', function() {
@@ -18,7 +28,7 @@ const productsInformations = {
             "../home-page/images/black-tshirt-weared.jpg",
       "../home-page/images/white-tshirt-weared.jpg"
     ],
-    price: "1500 DA",
+    price: "$18",
     description: "A comfortable oversized t-shirt, perfect for casual wear.",
     colors: [
         { name: "Black", code: "#222" },
@@ -35,7 +45,7 @@ const productsInformations = {
              "../home-page/images/black-cap.png",
              "../home-page/images/black-cap-weared.jpg",
             ] ,
-        price: "2000 DA",
+        price: "$20",
         description: "Classic black cap, adjustable and stylish.",
         colors: [
         { name: "Black", code: "#222" },
@@ -53,7 +63,7 @@ const productsInformations = {
              "../home-page/images/black-sweatshirt-weared.jpg",
              "../home-page/images/white-sweatshirt-weared.jpg"
             ] ,
-        price: "1500 DA",
+        price: "$28",
         description: "Warm and cozy sweatshirt, ideal for chilly days.",
         colors: [
         { name: "Black", code: "#222" },
@@ -71,7 +81,7 @@ const productsInformations = {
              "../home-page/images/blue-sweatshirt-unisex.jpg",
              "../home-page/images/yellow-sweatshirt-unisex.jpg",
             ] ,
-        price: "1800 DA",
+        price: "$30",
         description: "Warm and cozy sweatshirt, suitable for both genders.",
         colors: [
         { name: "White", code: "#BAB8BB" },
@@ -93,7 +103,7 @@ const productsInformations = {
              "../home-page/images/black-hoodie-weared.jpg",
              "../home-page/images/white-hoodie-weared.jpg"
             ] ,
-        price: "2000 DA",
+        price: "$35",
         description: "Stylish hoodie for Men with a comfortable fit, perfect for layering.",
         colors: [
         { name: "Black", code: "#222" },
@@ -112,7 +122,7 @@ const productsInformations = {
              "../home-page/images/white-tshirt-unisex.png",
              "../home-page/images/mocha-tshirt-unisex.png",
             ] ,
-        price: "1800 DA",
+        price: "$20",
         description: "A versatile unisex t-shirt, suitable for all occasions.",
         colors: [
         { name: "Blue", code: "#0F2378" },
@@ -130,7 +140,7 @@ const productsInformations = {
         images: [
              "../home-page/images/gaming-tshirt-1.jpg",
             ] ,
-        price: "2000 DA",
+        price: "$25",
         description: "A stylish t-shirt for gamers, featuring a unique design.",
         colors: [
         { name: "Black", code: "#222" },
@@ -145,7 +155,7 @@ const productsInformations = {
         images: [
              "../home-page/images/assassin-tshirt.jpg",
             ] ,
-        price: "2000 DA",
+        price: "$25",
         description: "A sleek t-shirt inspired by the Assassin's Creed series.",
         colors: [
         { name: "Black", code: "#222" },
@@ -161,7 +171,7 @@ const productsInformations = {
              "../home-page/images/bleach-tshirt.jpg",
              "../home-page/images/bleach-tshirt-white.jpg",
             ] ,
-        price: "2000 DA",
+        price: "$25",
         description: "A stylish t-shirt inspired by the Bleach anime series.",
         colors: [
         { name: "Black", code: "#222" },
@@ -179,7 +189,7 @@ const productsInformations = {
              "../home-page/images/spiderman-tshirt-white.png",
              "../home-page/images/spiderman-tshirt-red.jpg",
             ] ,
-        price: "2000 DA",
+        price: "$25",
         description: "A vibrant t-shirt featuring the iconic Spiderman design.",
         colors: [
         { name: "Black", code: "#222" },
@@ -197,7 +207,7 @@ const productsInformations = {
              "../home-page/images/pubg-tshirt.png",
              "../home-page/images/pubg-tshirt-white.png",
             ] ,
-        price: "2000 DA",
+        price: "$25",
         description: "A cool t-shirt for PUBG fans, featuring a bold design.",
         colors: [
         { name: "Black", code: "#222" },
@@ -215,7 +225,7 @@ const productsInformations = {
              "../home-page/images/call-of-duty-tshirt-white.jpg",
              "../home-page/images/call-of-duty-tshirt-blue.jpg",
             ] ,
-        price: "2000 DA",
+        price: "$25",
         description: "Call of duty T-shirt for Men.",
         colors: [
         { name: "Black", code: "#222" },
@@ -232,7 +242,7 @@ const productsInformations = {
         images: [
              "../home-page/images/minions-tshirt-kids.jpg"
             ] ,
-        price: "1200 DA",
+        price: "$13.5",
         description: "A fun t-shirt for kids featuring the lovable Minions.",
         colors: [
         { name: "Yellow", code: "#ffeb3b" },
@@ -250,7 +260,7 @@ const productsInformations = {
              "../home-page/images/purple-tshirt-kids.jpg",
              "../home-page/images/pink-tshirt-kids.jpg",
             ] ,
-        price: "1000 DA",
+        price: "$10",
         description: "comforting T-shirts for Kids",
         colors: [
         { name: "White", code: "#fff" },
@@ -268,7 +278,7 @@ const productsInformations = {
         images: [
              "../home-page/images/spiderman-tshirt-for-kids.jpg",
             ] ,
-        price: "1200 DA",
+        price: "$13.5",
         description: "A stylish t-shirt for kids featuring the spiderman design",
         colors: [
         { name: "Blue", code: "#0EBEE8" },
@@ -284,7 +294,7 @@ const productsInformations = {
              "../home-page/images/sweatshirt-for-kids.jpg",
              "../home-page/images/white-sweatshirt-for-kids.png",
             ] ,
-        price: "1200 DA",
+        price: "$18.5",
         description: "A comforting sweatshirt for Kids",
         colors: [
         { name: "Black", code: "#222" },
@@ -304,7 +314,7 @@ const productsInformations = {
              "../home-page/images/white-hoodie-unisex.png",
              "../home-page/images/blue-hoodie-unisex.png",
             ] ,
-        price: "2000 DA",
+        price: "$37.5",
         description: "A comforting hoodies with multiple colors to choose from , suitable for both genders",
         colors: [
         { name: "Green", code: "#41C3BB" },
@@ -325,7 +335,7 @@ const productsInformations = {
              "../home-page/images/white-hoodie-for-kids.png",
              "../home-page/images/Green-hoodie-for-kids.png",
             ] ,
-        price: "1500 DA",
+        price: "$22.5",
         description: "A comforting hoodies for Kids" ,
         colors: [
         { name: "blue", code: "#8EC5D9" },
@@ -344,7 +354,7 @@ const productsInformations = {
              "../home-page/images/white-cap.jpg",
              "../home-page/images/White-cap-weared.jpg",
             ] ,
-        price: "2000 DA",
+        price: "$20",
         description: "Classic white cap, adjustable and stylish.",
         colors: [
         { name: "White", code: "#fff" },
@@ -360,7 +370,7 @@ const productsInformations = {
              "../home-page/images/white-nike-cap.png",
              "../home-page/images/nike-cap.png",
             ] ,
-        price: "2500 DA",
+        price: "$25",
         description: "Nike Cap , suitable for both genders ",
         colors: [
         { name: "White", code: "#fff" },
@@ -377,7 +387,7 @@ const productsInformations = {
              "../home-page/images/black-new-balance-cap.png",
              "../home-page/images/white-new-balance-cap.png",
             ] ,
-        price: "2500 DA",
+        price: "$25",
         description: "New Balance Cap , suitable for both genders ",
         colors: [
         { name: "Black", code: "#222" },  
@@ -393,7 +403,7 @@ const productsInformations = {
         images: [
              "../home-page/images/nice-cap-for-kids.png",
             ] ,
-        price: "1000 DA",
+        price: "$10",
         description: "Nice and comforting cap for Kids , with a smile on it :) ",
         colors: [
         { name: "Black", code: "#222" },    
@@ -411,11 +421,12 @@ const productsInformations = {
              "../home-page/images/Nike-air-force-one-3.png",
              "../home-page/images/Nike-air-force-one-4.png",
             ] ,
-        price: "5000 DA",
+        price: "$60",
         description: "Nike air force 1, with a good price .",
         colors: [
         { name: "White", code: "#fff" },    
     ],  
+    category: "shoes" ,
     age: "Adults"
     },
 
@@ -427,11 +438,12 @@ const productsInformations = {
              "../home-page/images/new-balance-550-unisex-3.png",
              "../home-page/images/new-balance-550-unisex-4.png",
             ] ,
-        price: "10000 DA",
+        price: "$110",
         description: "New Balance 550 , a comforting sneakers suitable for both genders .",
         colors: [
         { name: "White", code: "#fff" },    
     ],  
+    category: "shoes" ,
     age: "Adults"
     },
 
@@ -441,11 +453,12 @@ const productsInformations = {
              "../home-page/images/nike-dunk-for-kids-1.jpg",
              "../home-page/images/nike-dunk-for-kids-2.jpg",
             ] ,
-        price: "3000 DA",
+        price: "$35",
         description: "Nike dunk for Kids , with a modern design .",
         colors: [
         { name: "Black", code: "#222" },    
     ],  
+    category: "shoes",
     age: "Children"
     },
 
@@ -457,7 +470,7 @@ const productsInformations = {
             "../home-page/images/nike-dunk-pink-for-women-3.jpg",
             "../home-page/images/nike-dunk-pink-for-women-4.jpg",
         ] ,
-    price: "8000 DA",
+    price: "$80",
     description: "Nike dunk pink for Women .",
     colors: [
     { name: "pink", code: "#FFC0CB" },    
@@ -474,7 +487,7 @@ const productsInformations = {
             "../home-page/images/nike-dunk-black&white-3.png",
             "../home-page/images/nike-dunk-black&white-4.png",
         ] ,
-    price: "9500 DA",
+    price: "$90",
     description: "Nike dunk black&white .",
     colors: [
     { name: "black", code: "#222" },    
@@ -1025,34 +1038,167 @@ document.querySelectorAll('.related-view-product-btn').forEach((btn) => {
 
 
 
-// this code is for the wishlist in the product page
+// --- Wishlist Button Logic for Product Page ---
 
-// Assume productId is available for this product page
+// 1. Set your product's unique ID here:
+
+// 2. Get DOM elements
 const wishlistBtn = document.getElementById('product-wishlist-btn');
 const wishlistIcon = document.getElementById('wishlist-icon');
-let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-// Set initial state
-if (wishlist.includes(productId)) {
-  wishlistBtn.classList.add('active');
-  wishlistIcon.textContent = 'favorite';
-} else {
-  wishlistBtn.classList.remove('active');
-  wishlistIcon.textContent = 'favorite_border';
+// 3. Toast function (reuse if you already have one)
+function showWishlistToast(message) {
+  let toast = document.getElementById('wishlist-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'wishlist-toast';
+    toast.className = 'wishlist-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 1800);
 }
 
+// 4. Initialize button state
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+function updateWishlistBtn() {
+  if (wishlist.includes(productId)) {
+    wishlistBtn.classList.add('active');
+    wishlistIcon.textContent = 'favorite';
+  } else {
+    wishlistBtn.classList.remove('active');
+    wishlistIcon.textContent = 'favorite_border';
+  }
+}
+updateWishlistBtn();
+
+// 5. Button click handler
 wishlistBtn.addEventListener('click', function() {
   wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
   if (wishlist.includes(productId)) {
     wishlist = wishlist.filter(id => id !== productId);
-    wishlistBtn.classList.remove('active');
-    wishlistIcon.textContent = 'favorite_border';
-    // Optionally show a toast: showWishlistToast('Product removed from wish list');
+    showWishlistToast('Product removed from wish list');
   } else {
     wishlist.push(productId);
-    wishlistBtn.classList.add('active');
-    wishlistIcon.textContent = 'favorite';
-    // Optionally show a toast: showWishlistToast('Product added to wish list');
+    showWishlistToast('Product added to wish list');
   }
   localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  updateWishlistBtn();
 });
+
+// Sync the wishlist button if wishlist changes in another tab/page
+window.addEventListener('storage', function(event) {
+  if (event.key === 'wishlist') {
+    // Always re-read the wishlist from localStorage
+    wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    updateWishlistBtn();
+  }
+});
+
+
+
+
+// generating the add to cart code with js because for the productId
+
+document.querySelector('.add-to-cart').innerHTML = `
+    <button class="add-to-cart-btn" id="add-to-cart-btn" data-product="${productId}">Add to Cart</button>
+`
+
+// code for cart
+
+// --- Cart Badge Sync ---
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+  const badge = document.getElementById('cart-badge');
+  if (badge) badge.textContent = totalQty;
+}
+updateCartBadge();
+
+window.addEventListener('storage', function(event) {
+  if (event.key === 'cart') {
+    updateCartBadge();
+  }
+});
+
+// --- Add to Cart Logic ---
+const addToCartBtn = document.getElementById('add-to-cart-btn');
+if (addToCartBtn) {
+  const productId = addToCartBtn.getAttribute('data-product');
+  addToCartBtn.addEventListener('click', function() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const qtyInput = document.getElementById('quantity-selector');
+    let selectedQty = 1;
+    if (qtyInput && !isNaN(parseInt(qtyInput.value))) {
+      selectedQty = Math.max(1, parseInt(qtyInput.value));
+    }
+
+    // Get selected color
+    let selectedColor = '';
+    const activeColorBtn = document.querySelector('.color-swatch.active');
+    if (activeColorBtn) {
+      selectedColor = activeColorBtn.getAttribute('data-color');
+    }
+
+    // Get selected size
+    let selectedSize = '';
+    const activeSizeBtn = document.querySelector('.size-btn.active');
+    if (activeSizeBtn) {
+      selectedSize = activeSizeBtn.textContent.trim();
+    } else {
+  const firstSizeBtn = document.querySelector('.size-btn');
+  if (firstSizeBtn) {
+    selectedSize = firstSizeBtn.textContent.trim();
+  }}
+
+    const found = cart.find(item => item.id === productId);
+    if (found) {
+      showCartToast('Product is already in the cart!');
+    } else {
+      console.log('Selected color:', selectedColor);
+      console.log('Selected size:', selectedSize);
+      cart.push({
+        id: productId,
+        qty: selectedQty,
+        color: selectedColor,
+        size: selectedSize,
+        category: productSelected.category
+
+      });
+      showCartToast('Product added to cart!');
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartBadge();
+  });
+}
+
+// --- Toast Message (if not already present) ---
+function showCartToast(message) {
+  let toast = document.getElementById('cart-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'cart-toast';
+    toast.className = 'cart-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 1800);
+}
+
+
+
+
+
+
+
+
+
+
+
+

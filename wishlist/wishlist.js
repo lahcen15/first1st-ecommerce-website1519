@@ -1,3 +1,19 @@
+// this code is for removing focus style after clicking the categories buttons
+
+document.querySelectorAll('.categories').forEach(link => {
+  link.addEventListener('click', function() {
+    this.blur(); // removes focus style after click
+  });
+});
+
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+if (cart.length && typeof cart[0] === "string") {
+  cart = cart.map(id => ({id, qty: 1}));
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function renderWishlist () {
 const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 const products = productsInformations; // productsInformations should be loaded globally
 
@@ -28,22 +44,52 @@ if (wishlist.length === 0) {
   });
 }
 
+
+
 // Remove from wishlist
 
 container.addEventListener('click', function(e) {
-  if (e.target.classList.contains('remove-wishlist-btn') || e.target.closest('.wishlist-btn')) {
+ if (
+    e.target.classList.contains('remove-wishlist-btn') ||
+    e.target.closest('.wishlist-card-btn')
+  ) {
     const btn = e.target.closest('[data-product]');
     const productId = btn.getAttribute('data-product');
     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     wishlist = wishlist.filter(id => id !== productId);
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
-    // Remove the card from DOM
-    btn.closest('.wishlist-product-card').remove();
+    showWishlistToast('Product removed from wish list');
+    renderWishlist(); // <-- This updates the page and all buttons
+    return;
+    updateWishlistButtons()
     // Optionally show a toast
     // showWishlistToast('Product removed from wish list');
+    
+    function showWishlistToast(message) {
+  let toast = document.getElementById('wishlist-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'wishlist-toast';
+    toast.className = 'wishlist-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 1800);
+}
+
+      showWishlistToast('Product removed from wish list');
+
+    
+  
   }
 });
 
+}
+
+renderWishlist()
 
 // this code is for cart
 
@@ -60,24 +106,55 @@ function showCartToast(message) {
 // Update cart badge number
 function updateCartBadge() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  document.getElementById('cart-badge').textContent = cart.length;
+  // Sum all quantities in the cart
+  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+  document.getElementById('cart-badge').textContent = totalQty;
 }
 
 // Add to cart logic
-document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const productId = this.getAttribute('data-product');
+
+
+const container = document.getElementById('wishlist-products');
+
+container.addEventListener('click', function(e) {
+  // Add to cart
+  if (e.target.classList.contains('add-to-cart-btn')) {
+    const productId = e.target.getAttribute('data-product');
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    if (!cart.includes(productId)) {
-      cart.push(productId);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      showCartToast('Product added to cart!');
-      updateCartBadge();
-    } else {
+    const found = cart.find(item => item.id === productId);
+    if (found) {
       showCartToast('Product is already in the cart!');
+    } else {
+      cart.push({id: productId, qty: 1});
+      showCartToast('Product added to cart!');
     }
-  });
-});
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartBadge();
+    return;
+  }
+});;
 
 // Call this once on page load to set the badge
 updateCartBadge();
+
+
+// sync the cart page , to show products without refresh
+window.addEventListener('storage', function(event) {
+  if (event.key === 'cart') {
+    updateCartBadge();
+    // If this is the cart page, also re-render the cart products here
+    // Example: renderCart();
+  }
+});
+
+
+
+window.addEventListener('storage', function(event) {
+  if (event.key === 'wishlist') {
+    renderWishlist();
+  }
+});
+
+
+
+renderWishlist()

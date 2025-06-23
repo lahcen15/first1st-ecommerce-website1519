@@ -58,10 +58,12 @@
             <span class="material-icons">favorite_border</span>
         </button>
         </a>
+        <a href="../cart/cart.html" style="text-decoration: none;">
         <button class="icon-btn" aria-label="Cart" data-tooltip="Cart">
             <span class="material-icons">shopping_cart</span>
-            <span class="cart-badge">2</span>
+            <span class="cart-badge" id="cart-badge">0</span>
         </button>
+        </a>
         <button class="login-btn icon-btn" data-tooltip="Login">Login</button>
     </div>
 
@@ -76,59 +78,60 @@
 
   <div class="product-images-area">
 
-    <div class="thumbnails">
-      <img class="thumbnail" src="" alt="Thumbnail 1">
-      <img class="thumbnail" src="" alt="Thumbnail 2">
-      <img class="thumbnail" src="" alt="Thumbnail 3">
-      <img class="thumbnail" src="" alt="Thumbnail 4">
+        <div class="thumbnails">
+        <img class="thumbnail" src="" alt="Thumbnail 1">
+        <img class="thumbnail" src="" alt="Thumbnail 2">
+        <img class="thumbnail" src="" alt="Thumbnail 3">
+        <img class="thumbnail" src="" alt="Thumbnail 4">
+        </div>
+        
+        <img id="product-main-img" class="main-img" src="" alt="Main Product Image">
     </div>
-    
-    <img id="product-main-img" class="main-img" src="" alt="Main Product Image">
-  </div>
-  <button class="wishlist-btn" id="product-wishlist-btn" aria-label="Add to wishlist">
-    <span class="material-icons" id="wishlist-icon">favorite_border</span>
-  </button>
-  <div class="product-info-area">
-    <h2 id="product-name"></h2>
-    <p id="product-price"></p>
-    <p id="product-description"></p>
-    <div class="selectors">
-      <div class="color-selector">
-        <span>Color :</span>
-        <button class="color-swatch" style="background: #222;" title="Black"></button>
-        <button class="color-swatch color-swatch-white" style="background: #fff;" title="White"></button>
-      </div>
+    <button class="wishlist-btn" id="product-wishlist-btn" aria-label="Add to wishlist">
+        <span class="material-icons" id="wishlist-icon">favorite_border</span>
+    </button>
+        <div class="product-info-area">
+            <h2 id="product-name"></h2>
+            <p id="product-price"></p>
+            <p id="product-description"></p>
+            <div class="selectors">
+                <div class="color-selector">
+                <span>Color :</span>
+                <button class="color-swatch" style="background: #222;" title="Black"></button>
+                <button class="color-swatch color-swatch-white" style="background: #fff;" title="White"></button>
+                </div>
 
+            </div>
+
+            <div class="size-selector size-selector-js">
+                    <span>Size :</span>
+                    <button class="size-btn">S</button>
+                    <button class="size-btn">M</button>
+                    <button class="size-btn">L</button>
+                    <button class="size-btn">XL</button>
+            </div>
+
+
+
+            <div class="cart-actions">
+                <span>Quantity :</span> 
+                <div class="quantity-selector">
+                <button type="button" class="qty-btn" id="decrease-qty">-</button>
+                <input id="quantity-selector" type="number" min="1" value="1" readonly>
+                <button type="button" class="qty-btn" id="increase-qty">+</button>
+                </div>
+                    <div class="add-to-cart"></div>
+            </div>
+
+            
+        </div>
     </div>
 
-    <div class="size-selector size-selector-js">
-            <span>Size :</span>
-            <button class="size-btn">S</button>
-            <button class="size-btn">M</button>
-            <button class="size-btn">L</button>
-            <button class="size-btn">XL</button>
-    </div>
-
-    
-
-    <div class="cart-actions">
-      <span>Quantity :</span> 
-      <div class="quantity-selector">
-        <button type="button" class="qty-btn" id="decrease-qty">-</button>
-        <input id="quantity-selector" type="number" min="1" value="1" readonly>
-        <button type="button" class="qty-btn" id="increase-qty">+</button>
-      </div>
-      <button class="add-to-cart-btn">Add to Cart</button>
-    </div>
-
-  </div>
 </div>
 
 <div class="separator"></div>
 
 <!-- Related product section -->
-
-
 
 <div class="related-products-section">
     <h3 class="related-title">
@@ -253,6 +256,14 @@
     <div class="footer">
                 <p class="footer-text">Copyright © 2025 Your Company. All rights reserved.</p>
     </div>
+
+
+
+
+
+<div id="wishlist-toast" class="wishlist-toast"></div>
+<div id="cart-toast" class="cart-toast"></div>
+
 
 
 

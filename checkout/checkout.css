@@ -1,0 +1,255 @@
+body {
+  background: #f5f7fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.checkout-container {
+  max-width: 1000px;
+  margin: 48px auto 45px auto;
+  padding: 32px 24px 24px 24px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #0001;
+}
+
+.checkout-container h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  color: #2196f3;
+  letter-spacing: 1px;
+}
+
+.checkout-flex {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.checkout-form {
+  flex: 1 1 340px;
+  min-width: 0;
+  background: #f7f7f7;
+  padding: 28px 22px 22px 22px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.checkout-form h3 {
+  margin-bottom: 18px;
+  color: #1769aa;
+  font-size: 1.2rem;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: #222;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 9px 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #fafbfc;
+  transition: border 0.2s;
+  margin-left: -10.5px;
+}
+
+textarea{
+    margin-left: -10.5px;
+}
+
+.checkout-form input:focus {
+  border: 1.5px solid #2196f3;
+  outline: none;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 12px 0;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.2s;
+  letter-spacing: 1px;
+}
+
+.place-order-btn:hover {
+  background: #1769aa;
+}
+
+.checkout-summary {
+/* Make the order summary wider */
+  flex: 0 0 420px;      /* Increase this value as needed */
+  min-width: 320px;
+  max-width: 520px;
+  background: #f7f7f7;
+  padding: 24px 20px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  word-break: break-word; /* Prevent overflow */
+  height: auto;
+}
+
+.checkout-summary h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #1769aa;
+  font-size: 1.2rem;
+}
+
+.checkout-summary ul {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 18px;
+}
+
+.checkout-summary li {
+  margin-bottom: 10px;
+}
+
+.checkout-summary .total {
+  font-weight: 600;
+  color: #4caf50;
+  font-size: 1.15rem;
+  margin-left: 2px;
+}
+
+.show-details-btn .arrow-icon {
+  display: inline-block;
+  transition: transform 0.2s;
+  color: #1769aa;
+}
+.show-details-btn.open .arrow-icon {
+  transform: rotate(180deg);
+}
+.product-details {
+  transition: all 0.8s;
+}
+.delivery-fees{
+  color: blue;
+}
+
+#order-success {
+  margin-top: 24px;
+  text-align: center;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+/* this style is for phone and email */
+.form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-bottom: 16px ;
+}
+
+.form-row label {
+  flex: 1 1 0;
+  margin-bottom: 0; /* Remove bottom margin for side-by-side */
+}
+.form-row label:first-child {
+  flex: 1.8 1 0; /* Email label: takes twice the space */
+}
+.form-row label:last-child {
+  flex: 1 1 0; /* Phone label: normal width */
+}
+/* this style is for phone and email */
+
+
+.payment-option {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+  position: relative;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+
+
+.payment-option input[type="radio"] {
+  accent-color: #2196f3;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  margin-bottom: -10px;
+  cursor: pointer;
+}
+
+.payment-option .custom-radio {
+  display: none; /* Hide if you use browser default */
+}
+
+
+
+.payment-on-delivery {
+color: #1769aa;
+font-weight: 500;
+}
+
+.checkout-form textarea {
+  width: 100%;
+  padding: 9px 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #fafbfc;
+  resize: vertical;
+  min-height: 60px;
+  transition: border 0.2s;
+}
+
+.checkout-form textarea:focus {
+  border: 1.5px solid #2196f3;
+  outline: none;
+}
+
+
+/* Responsive */
+@media (max-width: 767px) {
+  .checkout-container {
+    max-width: 98vw;
+    padding: 16px 4vw;
+  }
+  .checkout-flex {
+    flex-direction: column;
+    gap: 0;
+  }
+  .checkout-summary {
+    margin-top: 15px;
+    max-width: 100%;
+    height: auto ;
+  }
+
+/* this style is for phone and email */
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .form-row label {
+    margin-bottom: 16px;
+  }
+/* this style is for phone and email */
+
+
+
+}

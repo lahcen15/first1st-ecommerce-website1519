@@ -18,6 +18,7 @@
   gap: 28px;
   justify-content: center;
   margin-top: 32px;
+  margin-bottom: 40px;
 }
 
 .wishlist-product-card {
@@ -57,6 +58,30 @@
 .remove-wishlist-btn:hover {
   background: #cf711f;
 }
+
+
+/* style for message when clicking remove from cart */
+
+.wishlist-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2196f3;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+.wishlist-toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 .add-to-cart-btn {
   width: 100%;
