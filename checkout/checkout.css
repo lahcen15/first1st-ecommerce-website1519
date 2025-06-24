@@ -250,6 +250,9 @@ font-weight: 500;
   }
 /* this style is for phone and email */
 
+.total-price-text {
+  margin-top: 100px;
+}
 
 
 }

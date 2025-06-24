@@ -35,7 +35,7 @@ cart.forEach((item, idx) => {
 html += `</ul>
   <div style="margin-top:12px; font-weight:600;">
     <div style="margin-bottom: 3px;"> Delivery fees : <span class="delivery-fees">Please choose a delivery point to view delivery fees . </span> </div>
-    Total : <span class="total">$${ (total).toFixed(2)}</span>
+    <div style="total-price-text"> Total : <span class="total">$${ (total).toFixed(2)}</span> </div>
   </div>
 `;
 summaryDiv.innerHTML = html;
@@ -114,3 +114,22 @@ if (form) {
 
 
 
+// code that shows the number of  products in cart
+// code for cart
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+  const badge = document.getElementById('cart-badge');
+  if (badge) badge.textContent = totalQty;
+}
+
+// Call once on page load
+updateCartBadge();
+
+// Sync badge if cart changes in another tab
+window.addEventListener('storage', function(event) {
+  if (event.key === 'cart') {
+    updateCartBadge();
+  }
+});
