@@ -387,7 +387,7 @@ const productsInformations = {
         price: "$10",
         description: "Nice and comforting cap for Kids , with a smile on it :) ",
         colors: [
-        { name: "Black", code: "#222" },    
+        { name: "Mixed colors", code: "#8EC5D9" },    
     ],  
     category: "cap",
     printStyle: "printed",
@@ -437,7 +437,7 @@ const productsInformations = {
         price: "$35",
         description: "Nike dunk for Kids , with a modern design .",
         colors: [
-        { name: "Black", code: "#222" },    
+        { name: "Mixed colors", code: "#fff" },    
     ],  
     category: "shoes",
     age: "Children"
