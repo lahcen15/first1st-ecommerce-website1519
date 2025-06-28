@@ -145,7 +145,7 @@ document.querySelector('.search-toggle').addEventListener('click', function() {
       </button>
       <img src="../home-page/images/t-shirt-oversize.png" alt="T-shirt Oversize" class="product-img-categories">
       <h2 class="product-name-categories" id>T-shirt Oversize</h2>
-      <p class="product-price-categories">$15</p>
+      <p class="product-price-categories">$18</p>
       <button class="view-product-btn-categories" data-product="tshirt-oversize">View</button>
       
 
@@ -499,7 +499,20 @@ document.querySelector('.search-toggle').addEventListener('click', function() {
 <script src="../products-page/product-page.js"></script>
 
 
+<script src="product-page.js"></script>
 
+
+<script>
+    document.addEventListener('contextmenu' , event => event.preventDefault());
+</script>
+
+<script>
+  document.onkeydown = function(e) {
+    if(e.key == "F12" || (e.ctrlKey && e.shiftKey && (e.key == "I" || e.key == "J")) || (e.ctrlKey && e.key == "U")) {
+      return false;
+    }
+  }
+</script>
 
 </body>
     

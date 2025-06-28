@@ -140,14 +140,14 @@ document.querySelector('.search-toggle').addEventListener('click', function() {
     data-color="Black & White"
     data-sex="Men"
     data-print="Plain"
-    data-price="30"
+    data-price="35"
     >
     <button class="wishlist-card-btn" data-product="black-hoodie" aria-label="Add to wishlist">
         <span class="material-icons">favorite_border</span>
     </button>
       <img src="../home-page/images/black-hoodie.png" alt="T-shirt Oversize" class="product-img-categories">
       <h2 class="product-name-categories">Hoodie for Men</h2>
-      <p class="product-price-categories">$30</p>
+      <p class="product-price-categories">$35</p>
       <button class="view-product-btn-categories" data-product="black-hoodie">View</button>
     </div>
 
@@ -156,14 +156,14 @@ document.querySelector('.search-toggle').addEventListener('click', function() {
     data-color="Multiple colors"
     data-sex="Unisex"
     data-print="Plain"
-    data-price="32"
+    data-price="37.5"
     >
     <button class="wishlist-card-btn" data-product="unisex-hoodie" aria-label="Add to wishlist">
         <span class="material-icons">favorite_border</span>
     </button>
       <img src="../home-page/images/green-hoodie-unisex.jpg" alt="T-shirt Oversize" class="product-img-categories">
       <h2 class="product-name-categories">Unisex Hoodie</h2>
-      <p class="product-price-categories">$32</p>
+      <p class="product-price-categories">$37.5</p>
       <button class="view-product-btn-categories" data-product="unisex-hoodie">View</button>
     </div>
 
@@ -335,7 +335,20 @@ document.querySelector('.search-toggle').addEventListener('click', function() {
 <script src="../products-page/product-page.js"></script>
 
 
+<script src="product-page.js"></script>
 
+
+<script>
+    document.addEventListener('contextmenu' , event => event.preventDefault());
+</script>
+
+<script>
+  document.onkeydown = function(e) {
+    if(e.key == "F12" || (e.ctrlKey && e.shiftKey && (e.key == "I" || e.key == "J")) || (e.ctrlKey && e.key == "U")) {
+      return false;
+    }
+  }
+</script>
 
 </body>
     
