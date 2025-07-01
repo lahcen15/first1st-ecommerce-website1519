@@ -177,6 +177,7 @@
   cursor: pointer;
   transition: background 0.18s;
   margin-top: 10px;
+  margin-bottom: -3px;
 }
 .checkout-btn:hover {
   background: #1769aa;

@@ -118,18 +118,33 @@ if (form) {
 // code for cart
 
 function updateCartBadge() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
-  const badge = document.getElementById('cart-badge');
-  if (badge) badge.textContent = totalQty;
-}
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+    const badge = document.getElementById('cart-badge');
+    if (badge) badge.textContent = totalQty;
 
+    // Calculate total price directly from cart
+    let totalPrice = 0;
+    cart.forEach(item => {
+        let price = item.price;
+        if (typeof price === "string") {
+            price = parseFloat(price.replace(/[^0-9.]/g, ""));
+        }
+        totalPrice += (price || 0) * (item.qty || 0);
+    });
+    const priceSpan = document.getElementById('cart-total-price');
+    if (priceSpan) priceSpan.textContent = `$${totalPrice.toFixed(2)}`;
+}
 // Call once on page load
 updateCartBadge();
-
 // Sync badge if cart changes in another tab
 window.addEventListener('storage', function(event) {
   if (event.key === 'cart') {
-    updateCartBadge();
-  }
+updateCartBadge();  }
 });
+
+updateCartBadge();
+
+
+
+

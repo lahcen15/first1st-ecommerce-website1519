@@ -59,7 +59,7 @@
             <span class="cart-badge" id="cart-badge">0</span>
         </button>
         </a>
-        <button class="login-btn icon-btn" data-tooltip="Login">Login</button>
+        <span id="cart-total-price" class="cart-total-price"></span>
     </div>
 
 </div>  
@@ -78,20 +78,11 @@
   <script src="../home-page/products-data.js"></script>
   <script src="cart.js"></script>
 
-<script src="product-page.js"></script>
+
+<!-- <script src="product-page.js"></script>
+ -->
 
 
-<script>
-    document.addEventListener('contextmenu' , event => event.preventDefault());
-</script>
-
-<script>
-  document.onkeydown = function(e) {
-    if(e.key == "F12" || (e.ctrlKey && e.shiftKey && (e.key == "I" || e.key == "J")) || (e.ctrlKey && e.key == "U")) {
-      return false;
-    }
-  }
-</script>
 
 </body>
 </html>

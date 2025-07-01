@@ -103,13 +103,9 @@ function showCartToast(message) {
   }, 1800);
 }
 
-// Update cart badge number
-function updateCartBadge() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  // Sum all quantities in the cart
-  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
-  document.getElementById('cart-badge').textContent = totalQty;
-}
+
+
+
 
 // Add to cart logic
 
@@ -125,25 +121,58 @@ container.addEventListener('click', function(e) {
     if (found) {
       showCartToast('Product is already in the cart!');
     } else {
-      cart.push({id: productId, qty: 1});
+      // Get product info to get the price
+      const product = productsInformations[productId];
+      let price = product && product.price;
+      if (typeof price === "string") {
+        price = parseFloat(price.replace(/[^0-9.]/g, ""));
+      }
+      cart.push({id: productId, qty: 1, price: price});
+      localStorage.setItem('cart', JSON.stringify(cart));
       showCartToast('Product added to cart!');
+      updateCartBadge();
     }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartBadge();
-    return;
-  }
+}
 });;
+
+// code for cart
+
+function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+    const badge = document.getElementById('cart-badge');
+    if (badge) badge.textContent = totalQty;
+
+    // Calculate total price directly from cart
+    let totalPrice = 0;
+    cart.forEach(item => {
+        let price = item.price;
+        if (typeof price === "string") {
+            price = parseFloat(price.replace(/[^0-9.]/g, ""));
+        }
+        totalPrice += (price || 0) * (item.qty || 0);
+    });
+    const priceSpan = document.getElementById('cart-total-price');
+    if (priceSpan) priceSpan.textContent = `$${totalPrice.toFixed(2)}`;
+}
+// Call once on page load
+updateCartBadge();
+// Sync badge if cart changes in another tab
+window.addEventListener('storage', function(event) {
+  if (event.key === 'cart') {
+updateCartBadge();  }
+});
+
 
 // Call this once on page load to set the badge
 updateCartBadge();
+
 
 
 // sync the cart page , to show products without refresh
 window.addEventListener('storage', function(event) {
   if (event.key === 'cart') {
     updateCartBadge();
-    // If this is the cart page, also re-render the cart products here
-    // Example: renderCart();
   }
 });
 
